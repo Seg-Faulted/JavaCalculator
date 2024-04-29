@@ -24,12 +24,36 @@ public class Main {
         String[] math_array = math_input.split(regex);
 
             if (math_array[1].contains("*")) {
-                int x = Integer.parseInt(math_array[0]);
-                int y = Integer.parseInt(math_array[2]);
-                int resultant = x * y;
+                double x = Double.parseDouble(math_array[0]);
+                double y = Double.parseDouble(math_array[2]);
+                double product = x * y;
+                System.out.println(product);
+            }else if (math_array[1].contains("/")) {
+                double x = Double.parseDouble(math_array[0]);
+                double y = Double.parseDouble(math_array[2]);
+                double dividend = x / y;
+                System.out.println(dividend);
+            } else if (math_array[1].contains("+")) {
+                double x = Double.parseDouble(math_array[0]);
+                double y = Double.parseDouble(math_array[2]);
+                double resultant = x + y;
                 System.out.println(resultant);
-           // }
-        }
+            }else if (math_array[1].contains("-")) {
+                double x = Double.parseDouble(math_array[0]);
+                double y = Double.parseDouble(math_array[2]);
+                double difference = x - y;
+                System.out.println(difference);
+            }else if (math_array[1].contains("**")) {
+                double x = Double.parseDouble(math_array[0]);
+                double y = Double.parseDouble(math_array[2]);
+                double power =  Math.pow(x, y);
+                System.out.println(power);
+            }
+
+            else {
+                System.out.println("unsupported operation, it might come in the future for, modulo, etc.");
+            }
+
 
 
     }
