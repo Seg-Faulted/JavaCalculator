@@ -20,16 +20,12 @@ jobs:
       - name: Build and run Main.java
         run: |
           cd src    # Navigate to the src directory
-          echo test1
           javac Main.java
           native-image Main
-         
+          mv Main /github/workspace/Main    # Move the executable to the workspace directory
 
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
           name: JavaCalculator-${{ matrix.os }}
-          path: |
-          src/Main.java
-          src/Main.*
-          src/Main*
+          path: Main
