@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: JavaCalculator-${{ matrix.os }}
-          path: Main.java*
+          path: src/Main.java
