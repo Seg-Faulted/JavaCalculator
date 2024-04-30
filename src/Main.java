@@ -1,4 +1,8 @@
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 public class Main {
     public  static void main(String[] args) {
@@ -23,17 +27,25 @@ public class Main {
 
         String[] math_array = math_input.split(regex);
 
-            if (math_array[1].contains("*")) {
+            if (Objects.equals(math_array[1], "*")) {
                 double x = Double.parseDouble(math_array[0]);
                 double y = Double.parseDouble(math_array[2]);
                 double product = x * y;
                 System.out.println(product);
-            }else if (math_array[1].contains("/")) {
+
+            }else if (Objects.equals(math_array[1], "**"))  {
+                double  x = Double.parseDouble(math_array[0]);
+                double y = Double.parseDouble(math_array[2]);
+                double power =  Math.pow(x, y);
+                System.out.println(power);
+            }
+
+            else if (Objects.equals(math_array[1], "/")) {
                 double x = Double.parseDouble(math_array[0]);
                 double y = Double.parseDouble(math_array[2]);
                 double dividend = x / y;
                 System.out.println(dividend);
-            } else if (math_array[1].contains("+")) {
+            } else if (Objects.equals(math_array[1],"+")) {
                 double x = Double.parseDouble(math_array[0]);
                 double y = Double.parseDouble(math_array[2]);
                 double resultant = x + y;
@@ -43,20 +55,19 @@ public class Main {
                 double y = Double.parseDouble(math_array[2]);
                 double difference = x - y;
                 System.out.println(difference);
-            }else if (math_array[1].contains("**")) {
-                double x = Double.parseDouble(math_array[0]);
-                double y = Double.parseDouble(math_array[2]);
-                double power =  Math.pow(x, y);
-                System.out.println(power);
             }
 
             else {
                 System.out.println("unsupported operation, it might come in the future for, modulo, etc.");
             }
 
+        System.out.println(Arrays.toString(math_array));
+
 
 
     }
+
+
 
 
 }
