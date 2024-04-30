@@ -21,8 +21,8 @@ jobs:
         run: |
           cd src    # Navigate to the src directory
           javac Main.java
-          native-image javaCalc
-          ./javaCalc
+          native-image Main
+          ./Main
       
       - name: Upload binary
         uses: actions/upload-artifact@v2
