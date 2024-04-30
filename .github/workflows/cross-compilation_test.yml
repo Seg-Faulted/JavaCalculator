@@ -22,7 +22,10 @@ jobs:
           cd src    # Navigate to the src directory
           javac Main.java
           native-image Main
-          mv Main /github/workspace/Main    # Move the executable to the workspace directory
+          mv Main src # Move the executable to the workspace directory
+          cd src
+          mkdir generated_apps
+        
 
       - name: Upload binary
         uses: actions/upload-artifact@v2
