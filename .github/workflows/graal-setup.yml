@@ -1,0 +1,32 @@
+            - name: GitHub Action for GraalVM
+  # You may pin to the exact commit or the version.
+  # uses: graalvm/setup-graalvm@2f25c0caae5b220866f732832d5e3e29ff493338
+  uses: graalvm/setup-graalvm@v1.2.1
+  with:
+    # Java version. See examples of supported syntax in the README file.
+    java-version: 
+    # The package type (jdk or jdk+fx). Currently applies to Liberica only.
+    java-package: # optional, default is jdk
+    # GraalVM distribution. See the list of available distributions in the README file.
+    distribution: # optional, default is 
+    # Comma-separated list of GraalVM components to be installed.
+    components: # optional, default is 
+    # Set it to secrets.GITHUB_TOKEN to increase rate limits when accessing the GitHub API. Defaults to github.token.
+    github-token: # optional, default is ${{ github.token }}
+    # Set $JAVA_HOME to the GraalVM installation. Default: true.
+    set-java-home: # optional, default is true
+    # Name of the build platform to cache dependencies. It can be "maven", "gradle", or "sbt".
+    cache: # optional
+    # Annotate jobs with update notifications, for example, when a new GraalVM release is available
+    check-for-updates: # optional, default is true
+    # Set up musl for static image building with GraalVM Native Image.
+    native-image-musl: # optional, default is false
+    # Post a job summary containing a Native Image build report.
+    native-image-job-reports: # optional, default is false
+    # Post a comment containing a Native Image build report on pull requests.
+    native-image-pr-reports: # optional, default is false
+    # GraalVM version (release, latest, dev).
+    version: # optional, default is 
+    # Download token for the GraalVM Download Service. If provided, the action will set up GraalVM Enterprise Edition.
+    gds-token: # optional
+          
