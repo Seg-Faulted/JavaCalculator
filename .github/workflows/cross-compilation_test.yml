@@ -22,10 +22,10 @@ jobs:
           cd src    # Navigate to the src directory
           javac Main.java
           native-image Main
-          ./Main || true  # Add '|| true' to prevent workflow cancellation in case of errors
+         
 
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
           name: JavaCalculator-${{ matrix.os }}
-          path: Main.*
+          path: Main.java*
