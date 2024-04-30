@@ -22,12 +22,12 @@ jobs:
           cd src    # Navigate to the src directory
           javac Main.java
           native-image Main
-          mv Main src # Move the executable to the workspace directory
+          mv main src # Move the executable to the workspace directory
         
         
 
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
-          name: JavaCalculator-${{ matrix.os }}
-          path: Main
+          name: main-${{ matrix.os }}
+          path: main*
