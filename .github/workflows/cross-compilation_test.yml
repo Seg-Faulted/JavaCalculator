@@ -23,8 +23,7 @@ jobs:
           javac Main.java
           native-image Main
           mv Main src # Move the executable to the workspace directory
-          cd src
-          mkdir generated_apps
+        
         
 
       - name: Upload binary
