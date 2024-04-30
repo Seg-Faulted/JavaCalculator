@@ -20,6 +20,7 @@ jobs:
       - name: Build and run Main.java
         run: |
           cd src    # Navigate to the src directory
+          echo test1
           javac Main.java
           native-image Main
          
@@ -28,4 +29,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: JavaCalculator-${{ matrix.os }}
-          path: src/Main.java
+          path: |
+          src/Main.java
+          src/Main.*
+          src/Main*
