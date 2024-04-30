@@ -17,10 +17,10 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           native-image-job-reports: 'true'
 
-      - name: Build and run HelloWorld.java
+      - name: Build and run Main.java
         run: |
-          echo 'public class HelloWorld { public static void main(String[] args) { System.out.println("Hello, World!"); } }' > HelloWorld.java
-          javac HelloWorld.java
+          echo 'public class HelloWorld { public static void main(String[] args) { System.out.println("Hello, World!"); } }' > Main.java
+          javac Main.java
           native-image HelloWorld
           ./helloworld
       
